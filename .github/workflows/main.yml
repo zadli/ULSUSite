@@ -17,8 +17,6 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.WEB_SERVER_HOST }}
-          username: ${{ secrets.WEB_SERVER_USERNAME }}
+          username: root
           key: ${{ secrets.WEB_SERVER_SSH_KEY }}
-          script: |
-            cd /var/www/html
-            git pull origin develop
+          script: cd /var/www/ULSUSite && git pull origin develop
